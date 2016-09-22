@@ -21,7 +21,7 @@ import org.json.JSONException;
 
 import java.math.BigDecimal;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends Activity implements View.OnClickListener{
 
     public static final String PAYPAL_CLIENT_ID = "AbYB3mWJQUq8lqyEvnKRuXj1d08_q9rBYzE6HGSNi4vz9Q2uNjdC-SALmZi-lsw_LMx8V8DRETUaWMoP";
     public static final int PAYPAL_REQUEST_CODE = 123;
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     try {
                         //Getting the payment details
 
-                        new AlertDialog.Builder(getApplicationContext())
+                        new AlertDialog.Builder(MainActivity.this)
                                 .setTitle("Success")
                                 .setMessage(confirm.toJSONObject().toString(4)+"\n"+confirm.getPayment().toJSONObject().toString(4))
                                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
